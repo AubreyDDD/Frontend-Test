@@ -1,4 +1,222 @@
-.container{
+.container {
     height: 80vh;
-    background-color: aliceblue;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.inputContainer {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.input:focus {
+    box-shadow: 0 5px 15px rgba(0, 112, 243, 0.15);
+    transform: translateY(-2px);
+}
+
+.addButton,
+.deleteButton,
+.editButton {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.addButton {
+    background: linear-gradient(135deg, #0070f3 0%, #00a6ff 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 112, 243, 0.3);
+}
+
+.addButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 112, 243, 0.4);
+}
+
+.todoList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.todoItem {
+    background: white;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    animation: slideIn 0.5s ease-out;
+}
+
+.todoItem:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.todoContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.todoLeft {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.deleteButton {
+    background: linear-gradient(135deg, #ff4d4d 0%, #f02929 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 77, 77, 0.3);
+}
+
+.deleteButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 77, 77, 0.4);
+}
+
+.editButton {
+    background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+}
+
+.editButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(108, 117, 125, 0.4);
+}
+
+.completeButton {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid #6c757d;
+    background: white;
+    color: #6c757d;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(108, 117, 125, 0.2);
+}
+
+.completeButton:hover {
+    transform: scale(1.1);
+}
+
+.completeButton.completed {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    border: none;
+    color: white;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.completedText {
+    text-decoration: line-through;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.editInput {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    border: 2px solid #0070f3;
+    border-radius: 12px;
+    outline: none;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 112, 243, 0.1);
+}
+
+.error {
+    color: #dc3545;
+    margin: -0.5rem 0 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .inputContainer {
+        flex-direction: column;
+    }
+
+    .addButton {
+        width: 100%;
+    }
+
+    .todoContent {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .buttonGroup {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .editButton,
+    .deleteButton {
+        flex: 1;
+    }
 }
